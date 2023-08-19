@@ -98,8 +98,8 @@ class DataTransformation:
                 f"Applying preprocessing object on training dataframe and testing dataframe."
             )
 
-            input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
-            input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
+            input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
+            input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
 
             train_arr = np.c_[
                 input_feature_train_arr, np.array(target_feature_train_df)
@@ -121,4 +121,4 @@ class DataTransformation:
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
         except Exception as e:
-            raise CustomException(e,sys)    
+            raise CustomException(e,sys)
